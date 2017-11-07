@@ -29,10 +29,14 @@ namespace PacMan
                 Position = new Point (30, 240),
                 Bild = Resources.pipeVert_SunLeft
             },
-            new BasicWall()
+            new PortalWall()
             {
                 Position = new Point (30, 210),
-                Bild = Resources.pipeEnd_Up
+                Bild = Resources.pipeEnd_Up,
+                isOpen = true,
+                ÖffnungsRichtung = Richtung.oben,
+                Id = 0,
+                IdOfTargetPortal = 1
             },
             new BasicWall()
             {
@@ -74,10 +78,14 @@ namespace PacMan
                 Position = new Point (210, 90),
                 Bild = Resources.pipeVert_SunRight
             },
-            new BasicWall()
+            new PortalWall()
             {
                 Position = new Point (210, 120),
-                Bild = Resources.pipeEnd_Down
+                Bild = Resources.pipeEnd_Down,
+                isOpen = true,
+                ÖffnungsRichtung = Richtung.unten,
+                Id = 0,
+                IdOfTargetPortal = 1
             },
             new BasicWall()
             {
@@ -122,13 +130,15 @@ namespace PacMan
                 ÖffnungsRichtung = Richtung.rechts,
                 Id = 0,
                 IdOfTargetPortal = 1
+
             }
 
         };
 
         private List<Point> BasicWall = new List<Point>()           ///Kollision Hindernisse
         {
-            
+            new Point (30, 210),
+            new Point (30, 120),
             new Point (120, 180),
             new Point (120, 210),
             new Point (120, 240),
@@ -145,7 +155,6 @@ namespace PacMan
             new Point (60, 60),
             new Point (30, 60),
             new Point (30, 90),
-            new Point (30, 210),
             new Point (30, 240),
             new Point (30, 270)
         };
@@ -231,6 +240,7 @@ namespace PacMan
             {
                 var message = "Treffer! Eine Tür hat sich geöffnet! Du kannst sie benutzen um ins nächste Level zu springen! Du musst sie nur suchen";
                 MessageBox.Show(message);
+                //Hier muss hinzugefügt werden, dass sich eine "Tür" öffnet, sobald der Geist in LVL 1 geschnappt wurde
             }
             else if (player2.Location == target.Location )
             {
@@ -271,7 +281,7 @@ namespace PacMan
                         count++;
                         if (O)
                         {
-                            var NP = new Point(target.Location.X, target.Location.Y - 30);
+                            var NP = new Point(target.Location.X, target.Location.Y - 60);
                             if (NP != player.Location && checkWalls(NP) && NP != player2.Location)
                             {
                                 target.Location = NP;
@@ -283,7 +293,7 @@ namespace PacMan
                         count++;
                         if (R)
                         {
-                            var NP = new Point(target.Location.X + 30, target.Location.Y);
+                            var NP = new Point(target.Location.X + 60, target.Location.Y);
                             if (NP != player.Location && checkWalls(NP) && NP != player2.Location)
                             {
 
@@ -297,7 +307,7 @@ namespace PacMan
                         count++;
                         if (U)
                         {
-                            var NP = new Point(target.Location.X, target.Location.Y + 30);
+                            var NP = new Point(target.Location.X, target.Location.Y + 60);
                             if (NP != player.Location && checkWalls(NP) && NP != player2.Location)
                             {
 
@@ -310,7 +320,7 @@ namespace PacMan
                         count++;
                         if (L)
                         {
-                            var NP = new Point(target.Location.X - 30, target.Location.Y);
+                            var NP = new Point(target.Location.X - 60, target.Location.Y);
                             if (NP != player.Location && checkWalls(NP) && NP != player2.Location)
                             {
 
@@ -341,37 +351,37 @@ namespace PacMan
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.W || e.KeyCode == Keys.Up)
+            if (e.KeyCode == Keys.W )
             {
                 hochbtn_Click(sender, new EventArgs());
             }
-            if (e.KeyCode == Keys.S || e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.S )
             {
                 runterbtn_Click(sender, new EventArgs());
             }
-            if (e.KeyCode == Keys.D || e.KeyCode == Keys.Right)
+            if (e.KeyCode == Keys.D )
             {
                 rechtsbtn_Click(sender, new EventArgs());
             }
 
-            if (e.KeyCode == Keys.A || e.KeyCode == Keys.Left)
+            if (e.KeyCode == Keys.A )
             {
                 linksbtn_Click(sender, new EventArgs());
             }
-            if (e.KeyCode == Keys.U || e.KeyCode == Keys.Up)
+            if (e.KeyCode == Keys.Up)
             {
                 hochbtn2_Click(sender, new EventArgs());
             }
-            if (e.KeyCode == Keys.J || e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.Down)
             {
                 runterbtn2_Click(sender, new EventArgs());
             }
-            if (e.KeyCode == Keys.K || e.KeyCode == Keys.Right)
+            if (e.KeyCode == Keys.Right)
             {
                 rechtsbtn2_Click(sender, new EventArgs());
             }
 
-            if (e.KeyCode == Keys.H || e.KeyCode == Keys.Left)
+            if (e.KeyCode == Keys.Left)
             {
                 linksbtn2_Click(sender, new EventArgs());
             }
@@ -476,20 +486,20 @@ namespace PacMan
         }
         private void Form2_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.U || e.KeyCode == Keys.Up)
+            if ( e.KeyCode == Keys.Up)
             {
                 hochbtn2_Click(sender, new EventArgs());
             }
-            if (e.KeyCode == Keys.J || e.KeyCode == Keys.Down)
+            if ( e.KeyCode == Keys.Down)
             {
                 runterbtn2_Click(sender, new EventArgs());
             }
-            if (e.KeyCode == Keys.K || e.KeyCode == Keys.Right)
+            if ( e.KeyCode == Keys.Right)
             {
                 rechtsbtn2_Click(sender, new EventArgs());
             }
 
-            if (e.KeyCode == Keys.H || e.KeyCode == Keys.Left)
+            if ( e.KeyCode == Keys.Left)
             {
                 linksbtn2_Click(sender, new EventArgs());
             }
