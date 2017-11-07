@@ -126,9 +126,28 @@ namespace PacMan
 
         };
 
-        private List<Point> Walls = new List<Point>()           ///Kollision Hindernisse
+        private List<Point> BasicWall = new List<Point>()           ///Kollision Hindernisse
         {
-        
+            
+            new Point (120, 180),
+            new Point (120, 210),
+            new Point (120, 240),
+            new Point (150, 270),
+            new Point (150, 240),
+            new Point (180, 240),
+            new Point (210, 240),
+            new Point (210, 120),
+            new Point (210, 90),
+            new Point (270, 60),
+            new Point (240, 60),
+            new Point (210, 60),
+            new Point (90, 60),
+            new Point (60, 60),
+            new Point (30, 60),
+            new Point (30, 90),
+            new Point (30, 210),
+            new Point (30, 240),
+            new Point (30, 270)
         };
         
 
@@ -144,7 +163,7 @@ namespace PacMan
         }
         private bool checkWalls(Point point)
         {
-            if (Walls.Any(X => X == point))
+            if (BasicWall.Any(X => X == point))
             {
                 return false;
             }
