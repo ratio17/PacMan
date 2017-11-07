@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alexs Website", "Alexs Website\Alexs Website.csproj", "{5DAC980C-ABC0-43F4-80DA-7BB3F04A47BB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacMan", "PacMan\PacMan.csproj", "{5CACB4C8-D31C-4F3D-88D1-D8339C3807F7}"
 EndProject
 Global
@@ -13,11 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5DAC980C-ABC0-43F4-80DA-7BB3F04A47BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5DAC980C-ABC0-43F4-80DA-7BB3F04A47BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5DAC980C-ABC0-43F4-80DA-7BB3F04A47BB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{5DAC980C-ABC0-43F4-80DA-7BB3F04A47BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5DAC980C-ABC0-43F4-80DA-7BB3F04A47BB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5CACB4C8-D31C-4F3D-88D1-D8339C3807F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5CACB4C8-D31C-4F3D-88D1-D8339C3807F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CACB4C8-D31C-4F3D-88D1-D8339C3807F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -25,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DA039D0-EF18-4C6B-94AA-CCD84A706899}
 	EndGlobalSection
 EndGlobal
