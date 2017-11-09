@@ -65,12 +65,7 @@
             this.linksbtn2 = new System.Windows.Forms.Button();
             this.rechtsbtn2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.playGround2 = new System.Windows.Forms.Panel();
-            this.target2 = new System.Windows.Forms.Panel();
-            this.panel22 = new System.Windows.Forms.Panel();
-            this.panel21 = new System.Windows.Forms.Panel();
             this.playGround.SuspendLayout();
-            this.playGround2.SuspendLayout();
             this.SuspendLayout();
             // 
             // hochbtn
@@ -163,7 +158,7 @@
             this.playGround.Controls.Add(this.player);
             this.playGround.Location = new System.Drawing.Point(12, 12);
             this.playGround.Name = "playGround";
-            this.playGround.Size = new System.Drawing.Size(300, 300);
+            this.playGround.Size = new System.Drawing.Size(600, 300);
             this.playGround.TabIndex = 4;
             this.playGround.Paint += new System.Windows.Forms.PaintEventHandler(this.playGround_Paint);
             // 
@@ -235,8 +230,9 @@
             // 
             // panel17
             // 
-            this.panel17.BackColor = System.Drawing.Color.Lime;
+            this.panel17.BackColor = System.Drawing.Color.Transparent;
             this.panel17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel17.BackgroundImage")));
+            this.panel17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel17.Location = new System.Drawing.Point(210, 60);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(30, 30);
@@ -298,7 +294,7 @@
             // 
             // panel10
             // 
-            this.panel10.BackColor = System.Drawing.Color.Lime;
+            this.panel10.BackColor = System.Drawing.Color.Transparent;
             this.panel10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel10.BackgroundImage")));
             this.panel10.Location = new System.Drawing.Point(30, 60);
             this.panel10.Name = "panel10";
@@ -307,7 +303,7 @@
             // 
             // panel9
             // 
-            this.panel9.BackColor = System.Drawing.Color.Lime;
+            this.panel9.BackColor = System.Drawing.Color.Transparent;
             this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
             this.panel9.Location = new System.Drawing.Point(30, 90);
             this.panel9.Name = "panel9";
@@ -344,7 +340,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.Lime;
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
             this.panel5.Location = new System.Drawing.Point(120, 240);
             this.panel5.Name = "panel5";
@@ -459,55 +455,12 @@
             this.textBox1.TabIndex = 9;
             this.textBox1.Text = "    <-Player1   |   Player2->";
             // 
-            // playGround2
-            // 
-            this.playGround2.BackColor = System.Drawing.Color.Transparent;
-            this.playGround2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("playGround2.BackgroundImage")));
-            this.playGround2.Controls.Add(this.target2);
-            this.playGround2.Controls.Add(this.panel22);
-            this.playGround2.Controls.Add(this.panel21);
-            this.playGround2.Location = new System.Drawing.Point(318, 12);
-            this.playGround2.Name = "playGround2";
-            this.playGround2.Size = new System.Drawing.Size(300, 300);
-            this.playGround2.TabIndex = 10;
-            this.playGround2.Paint += new System.Windows.Forms.PaintEventHandler(this.playGround2_Paint);
-            // 
-            // target2
-            // 
-            this.target2.AccessibleName = "EnemyTarget";
-            this.target2.BackColor = System.Drawing.Color.Transparent;
-            this.target2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("target2.BackgroundImage")));
-            this.target2.Location = new System.Drawing.Point(120, 90);
-            this.target2.Name = "target2";
-            this.target2.Size = new System.Drawing.Size(30, 60);
-            this.target2.TabIndex = 19;
-            this.target2.Paint += new System.Windows.Forms.PaintEventHandler(this.target2_Paint);
-            // 
-            // panel22
-            // 
-            this.panel22.BackColor = System.Drawing.Color.Lime;
-            this.panel22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel22.BackgroundImage")));
-            this.panel22.Location = new System.Drawing.Point(30, 60);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(30, 30);
-            this.panel22.TabIndex = 18;
-            // 
-            // panel21
-            // 
-            this.panel21.BackColor = System.Drawing.Color.Lime;
-            this.panel21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel21.BackgroundImage")));
-            this.panel21.Location = new System.Drawing.Point(0, 60);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(30, 30);
-            this.panel21.TabIndex = 17;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(981, 603);
-            this.Controls.Add(this.playGround2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.rechtsbtn2);
             this.Controls.Add(this.linksbtn2);
@@ -526,7 +479,6 @@
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.playGround.ResumeLayout(false);
-            this.playGround2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -569,10 +521,6 @@
         private System.Windows.Forms.Panel item1;
         private System.Windows.Forms.Panel item3;
         private System.Windows.Forms.Panel item2;
-        private System.Windows.Forms.Panel playGround2;
-        private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.Panel target2;
-        private System.Windows.Forms.Panel panel22;
     }
 }
 

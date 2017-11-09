@@ -15,10 +15,11 @@ namespace PacMan
     {
         private Random m_zufall = new Random();
 
-        //BasicWall als Hindernis hinzzufügen. Vorher war das hindernis:
+        //TrueWalls als Hindernis hinzzufügen. Vorher war das hindernis:
         // private List<Point> Walls = new List<Point>() 
 
         private List<BasicWall> TrueWalls = new List<BasicWall>() {
+            
             new BasicWall()
             {
                 Position = new Point (30, 270),
@@ -61,7 +62,7 @@ namespace PacMan
             new BasicWall()
             {
                 Position = new Point (210, 60),
-                Bild = Resources.pipeHori_SunTop
+                Bild = Resources.pipeEnd_Down
             },
             new BasicWall()
             {
@@ -82,7 +83,7 @@ namespace PacMan
             {
                 Position = new Point (210, 120),
                 Bild = Resources.pipeEnd_Down,
-                isOpen = true,
+                isOpen = false,
                 ÖffnungsRichtung = Richtung.unten,
                 Id = 0,
                 IdOfTargetPortal = 1
@@ -135,7 +136,7 @@ namespace PacMan
 
         };
 
-        private List<Point> BasicWall = new List<Point>()           ///Kollision Hindernisse
+        private List<Point> BasicWall = new List<Point>()           //Kollision Hindernisse
         {
             new Point (30, 210),
             new Point (30, 120),
@@ -146,7 +147,7 @@ namespace PacMan
             new Point (150, 240),
             new Point (180, 240),
             new Point (210, 240),
-            new Point (210, 120),
+            //new Point (210, 120),
             new Point (210, 90),
             new Point (270, 60),
             new Point (240, 60),
@@ -240,6 +241,7 @@ namespace PacMan
             {
                 var message = "Treffer! Eine Tür hat sich geöffnet! Du kannst sie benutzen um ins nächste Level zu springen! Du musst sie nur suchen";
                 MessageBox.Show(message);
+
                 //Hier muss hinzugefügt werden, dass sich eine "Tür" öffnet, sobald der Geist in LVL 1 geschnappt wurde
             }
             else if (player2.Location == target.Location )
@@ -281,7 +283,7 @@ namespace PacMan
                         count++;
                         if (O)
                         {
-                            var NP = new Point(target.Location.X, target.Location.Y - 60);
+                            var NP = new Point(target.Location.X, target.Location.Y - 30);
                             if (NP != player.Location && checkWalls(NP) && NP != player2.Location)
                             {
                                 target.Location = NP;
@@ -293,7 +295,7 @@ namespace PacMan
                         count++;
                         if (R)
                         {
-                            var NP = new Point(target.Location.X + 60, target.Location.Y);
+                            var NP = new Point(target.Location.X + 30, target.Location.Y);
                             if (NP != player.Location && checkWalls(NP) && NP != player2.Location)
                             {
 
@@ -307,7 +309,7 @@ namespace PacMan
                         count++;
                         if (U)
                         {
-                            var NP = new Point(target.Location.X, target.Location.Y + 60);
+                            var NP = new Point(target.Location.X, target.Location.Y + 30);
                             if (NP != player.Location && checkWalls(NP) && NP != player2.Location)
                             {
 
@@ -320,7 +322,7 @@ namespace PacMan
                         count++;
                         if (L)
                         {
-                            var NP = new Point(target.Location.X - 60, target.Location.Y);
+                            var NP = new Point(target.Location.X - 30, target.Location.Y);
                             if (NP != player.Location && checkWalls(NP) && NP != player2.Location)
                             {
 
@@ -346,7 +348,7 @@ namespace PacMan
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
@@ -456,7 +458,6 @@ namespace PacMan
         {
             var NP = new Point(player2.Location.X, player2.Location.Y + 30);
             if (NP.Y <= 270 && NP != player.Location)
-
             {
                 if (checkWalls(NP))
                 {
@@ -478,7 +479,7 @@ namespace PacMan
                     targetRefresh();
                 }
             }
-
+            
         }
         private void Form2_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -510,36 +511,19 @@ namespace PacMan
             {
                 var message = "Treffer! Eine Tür hat sich geöffnet! Du kannst sie benutzen um ins nächste Level zu springen! Du musst sie nur suchen";
                 MessageBox.Show(message);
-                
+
             }
         }
 
-
-        ///private void item1Location()
-        ///{
-        /// if (player2.Location == Item1.Location)
-        ///  {
-        /// private void Form2_KeyUp(object sender, KeyEventArgs e)
-        ///        {
-        ///          if (e.KeyCode == Keys.U || e.KeyCode == Keys.Up)
-        ///           {
-        ///               hochbtn2_Click(sender, new EventArgs());
-        ///            }
-        ///            if (e.KeyCode == Keys.J || e.KeyCode == Keys.Down)
-        ///            {
-        ///               runterbtn2_Click(sender, new EventArgs());
-        ///           }
-        ///            if (e.KeyCode == Keys.K || e.KeyCode == Keys.Right)
-        ///            {
-        ///               rechtsbtn2_Click(sender, new EventArgs());
-        ///            }
-        ///          if (e.KeyCode == Keys.H || e.KeyCode == Keys.Left)
-        ///          {
-        ///              linksbtn2_Click(sender, new EventArgs());
-        ///         }
-        ///}
-        ///}
-        ///}
+        private void teleportation(object sender, EventArgs e)
+        {
+            var NP = new Point(player2.Location.X + 90, player2.Location.Y - 60);
+            if (NP.X == 210 && NP.Y == 120 && NP != player.Location)
+            {
+                    player2.Location = NP;
+                    targetRefresh();
+            }
+        }
 
         private void target2_Paint(object sender, PaintEventArgs e)
         {
