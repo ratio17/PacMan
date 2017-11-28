@@ -143,7 +143,7 @@ namespace PacMan
                 IdOfTargetPortal = 1
 
             }
-
+            
         };
 
         public Form1()
@@ -172,7 +172,7 @@ namespace PacMan
                 }
                 else
                 {
-                    return Richtung.rechts;         // Spieler kommt von rechts in snächste Feld
+                    return Richtung.rechts;         // Spieler kommt von rechts ins nächste Feld
                 }
             }
             else

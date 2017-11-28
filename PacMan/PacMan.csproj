@@ -93,6 +93,9 @@
     <None Include="Resources\pipe9 rund mit sonne oben links remastered.png" />
     <None Include="Resources\pipe9 rund mit sonne unten - remastered - Kopie.png" />
     <None Include="Resources\pipe9 rund mit sonne unten - remastered - Kopie %282%29.png" />
+    <None Include="Resources\Backcolor2.png" />
+    <None Include="Resources\bg2.png" />
+    <None Include="Resources\FirePipe1.png" />
     <Content Include="Resources\pipe9.png" />
     <Content Include="Resources\pipe10.png" />
     <None Include="Resources\pipe6.png" />
