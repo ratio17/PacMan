@@ -8,22 +8,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+//182100
 namespace PacMan
+    
 {
     public partial class Form1 : Form
     {
         private Random m_zufall = new Random();
 
-        //TrueWalls als Hindernis hinzzufügen. Vorher war das hindernis:
-        // private List<Point> Walls = new List<Point>() 
+        //TrueWalls als Hindernis hinzufügen. Vorher war das hindernis:                                 (siehe Liste:  BasicWall (Z. 140))
+         //private List<Point> Walls = new List<Point>()
 
-        private List<BasicWall> TrueWalls = new List<BasicWall>() {
-            
+        private List<BasicWall> TrueWalls = new List<BasicWall>()
+        { 
             new BasicWall()
             {
                 Position = new Point (30, 270),
-                Bild = Resources.pipeHori_SunTop
+                Bild = Resources.pipeVert_SunLeft
             },
             new BasicWall()
             {
@@ -34,35 +35,39 @@ namespace PacMan
             {
                 Position = new Point (30, 210),
                 Bild = Resources.pipeEnd_Up,
-                isOpen = true,
+                isOpen = false,
                 ÖffnungsRichtung = Richtung.oben,
-                Id = 0,
+                Id = 4,
                 IdOfTargetPortal = 1
             },
             new BasicWall()
             {
                 Position = new Point (30, 90),
-                Bild = Resources.pipeVert_SunRight
+                Bild = Resources.pipeVert_SunLeft
             },
             new BasicWall()
             {
                 Position = new Point (30, 60),
-                Bild = Resources.pipeHori_SunTop
+                Bild = Resources.pipeRund_SonneObenLinks
             },
             new BasicWall()
             {
                 Position = new Point (60, 60),
-                Bild = Resources.pipeHori_SunTop
+                Bild = Resources.pipeHori_SunTop     
             },
-            new BasicWall()
+            new PortalWall()
             {
                 Position = new Point (90, 60),
-                Bild = Resources.pipeEnd_Right
+                Bild = Resources.pipeEnd_Right,
+                isOpen = true,
+                ÖffnungsRichtung = Richtung.rechts,
+                Id = 1,
+                IdOfTargetPortal = 3
             },
             new BasicWall()
             {
                 Position = new Point (210, 60),
-                Bild = Resources.pipeEnd_Down
+                Bild = Resources.pipeRund_SonneObenLinks
             },
             new BasicWall()
             {
@@ -77,7 +82,12 @@ namespace PacMan
             new BasicWall()
             {
                 Position = new Point (210, 90),
-                Bild = Resources.pipeVert_SunRight
+                Bild = Resources.pipeVert_SunLeft
+            },
+            new BasicWall()
+            {
+                Position = new Point(210, 270),
+                Bild = Resources.pipeVert_SunLeft
             },
             new PortalWall()
             {
@@ -91,90 +101,128 @@ namespace PacMan
             new BasicWall()
             {
                 Position = new Point (210, 240),
-                Bild = Resources.pipeEnd_Right
+                Bild = Resources.pipeRund_SonneUntenLinks
             },
             new BasicWall()
             {
                 Position = new Point (180, 240),
-                Bild = Resources.pipeHori_SunTop
+                Bild = Resources.pipeHori_SunBot
             },
-            new BasicWall
+            new BasicWall()
             {
                 Position = new Point (150, 240),
-                Bild = Resources.pipeHori_SunTop
+                Bild = Resources.pipeHori_SunBot
             },
-            new BasicWall
-            {
-                Position = new Point (150, 270),
-                Bild = Resources.pipeVert_SunLeft
-            },
-            new BasicWall
+            new BasicWall()
             {
                 Position = new Point (120, 240),
-                Bild = Resources.pipeHori_SunTop
+                Bild = Resources.pipeRund_SonneUntenObenLinks
             },
-            new BasicWall
+            new BasicWall()
             {
                 Position = new Point (120, 210),
                 Bild = Resources.pipeVert_SunLeft
             },
-            new BasicWall
+            new PortalWall()
             {
                 Position = new Point (120, 180),
-                Bild = Resources.pipeEnd_Up
+                Bild = Resources.pipeEnd_Up,
+                isOpen = false,
+                ÖffnungsRichtung = Richtung.oben,
+                Id = 2,
+                IdOfTargetPortal = 1
+
             },
             new PortalWall()
             {
                 Position = new Point (30, 120),
-                Bild = Resources.pipeEnd_Right,
+                Bild = Resources.pipeEnd_Down,
                 isOpen = true,
-                ÖffnungsRichtung = Richtung.rechts,
-                Id = 0,
+                ÖffnungsRichtung = Richtung.unten,
+                Id = 3,
                 IdOfTargetPortal = 1
 
             }
 
         };
 
-        private List<Point> BasicWall = new List<Point>()           //Kollision Hindernisse
-        {
-            new Point (30, 210),
-            new Point (30, 120),
-            new Point (120, 180),
-            new Point (120, 210),
-            new Point (120, 240),
-            new Point (150, 270),
-            new Point (150, 240),
-            new Point (180, 240),
-            new Point (210, 240),
-            //new Point (210, 120),
-            new Point (210, 90),
-            new Point (270, 60),
-            new Point (240, 60),
-            new Point (210, 60),
-            new Point (90, 60),
-            new Point (60, 60),
-            new Point (30, 60),
-            new Point (30, 90),
-            new Point (30, 240),
-            new Point (30, 270)
-        };
-        
-
-      ///  public class RohrO
-      ///  {
-      ///      public bool RohrOpen { get; set; }
-      ///  }
-
         public Form1()
         {
             InitializeComponent();
-
-        }
-        private bool checkWalls(Point point)
-        {
-            if (BasicWall.Any(X => X == point))
+            foreach (BasicWall basicWall in TrueWalls)
             {
+                var panel = new Panel()
+                {
+                    Location = basicWall.Position,
+                    BackgroundImage = basicWall.Bild,
+                    Size = new Size(30,30)
+                };
+                playGround.Controls.Add(panel);
+            }
+            playGround.Refresh();
+        }
+
+        private Richtung getRichtung(Point oldPoint, Point newPoint)
+        {
+            if (oldPoint.X != newPoint.X)
+            {
+                if (oldPoint.X < newPoint.X)
+                {
+                    return Richtung.links;          //Spieler kommt von links ins nächste Feld
+                }
+                else
+                {
+                    return Richtung.rechts;         // Spieler kommt von rechts in snächste Feld
+                }
+            }
+            else
+            {
+                if (oldPoint.Y > newPoint.Y)
+                {
+                    return Richtung.unten;          //Spieler kommt von unten ins nächste Feld
+                }
+                else
+                {
+                    return Richtung.oben;           //Spieler Kommt von oben ins nächste Feld
+                }
+            }
+        }
+
+        private bool checkWalls(ref Point point, Point oldPoint)
+        {
+            var p = point;
+            if (TrueWalls.Any(X => X.Position == p))
+            {
+                var Wall = TrueWalls.First(X => X.Position == p) as PortalWall;
+                
+                if (Wall != null && Wall.isOpen)
+                {
+                    var playerRichtung = getRichtung(oldPoint, point);
+                    if (Wall.ÖffnungsRichtung == playerRichtung)
+                    {
+                        var zielPortal = TrueWalls.Where(x => x is PortalWall).Cast<PortalWall>()
+                            .First(x => x.Id == Wall.IdOfTargetPortal);
+                        point = zielPortal.Position;
+                        switch (zielPortal.ÖffnungsRichtung)
+                        {
+                            case Richtung.links:
+                                point.X -= 30;
+                                break;
+                            case Richtung.rechts:
+                                point.X += 30;
+                                break;
+                            case Richtung.oben:
+                                point.Y -= 30;
+                                break;
+                            case Richtung.unten:
+                                point.Y += 30;
+                                break;
+                        }
+                        return true;
+                    }
+                }
+
+                
                 return false;
             }
             return true;
@@ -185,7 +233,7 @@ namespace PacMan
             var NP = new Point(player.Location.X, player.Location.Y - 30);
             if (NP.Y >= 0 && NP != player2.Location)
             {
-                if (checkWalls(NP))
+                if (checkWalls(ref NP, player.Location))
                 {
                     player.Location = NP;
                     targetRefresh();
@@ -196,9 +244,8 @@ namespace PacMan
         {
             var NP = new Point(player.Location.X + 30, player.Location.Y);
             if (NP.X <= 270 && NP != player2.Location)
-
             {
-                if (checkWalls(NP))
+                if (checkWalls(ref NP, player.Location))
                 {
                     player.Location = NP;
                     targetRefresh();
@@ -211,21 +258,19 @@ namespace PacMan
             var NP = new Point(player.Location.X, player.Location.Y + 30);
             if (NP.Y <= 270 && NP != player2.Location)
             {
-                if (checkWalls(NP))
+                if (checkWalls(ref NP, player.Location))
                 {
                     player.Location = NP;
                     targetRefresh();
                 }
             }
-
-
         }
         private void linksbtn_Click(object sender, EventArgs e)
         {
             var NP = new Point(player.Location.X - 30, player.Location.Y);
             if (NP.X >= 0 && NP != player2.Location)
             {
-                if (checkWalls(NP))
+                if (checkWalls(ref NP, player.Location))
                 {
                     player.Location = NP;
                     targetRefresh();
@@ -233,7 +278,8 @@ namespace PacMan
             }
 
         }
-
+        //sobald die röhre begangen wird und die pfeilstaste nach oben betätigt, wird man TP´t
+       
         ///Kollision Spieler 1 und 2 mit Target
         private void targetRefresh()
         {
@@ -241,15 +287,14 @@ namespace PacMan
             {
                 var message = "Treffer! Eine Tür hat sich geöffnet! Du kannst sie benutzen um ins nächste Level zu springen! Du musst sie nur suchen";
                 MessageBox.Show(message);
-
-                //Hier muss hinzugefügt werden, dass sich eine "Tür" öffnet, sobald der Geist in LVL 1 geschnappt wurde
+               
+                //Hier muss hinzugefügt werden, dass sich eine "Tür" öffnet, sobald der Geist in LVL 1 geschnappt wurde (PortalWall öffnet sich)
             }
             else if (player2.Location == target.Location )
             {
                 var message = "Treffer! Eine Tür hat sich geöffnet! Du kannst sie benutzen um ins nächste Level zu springen! Du musst sie nur suchen";
                 MessageBox.Show(message);
             }
-
             ///Target St
             var O = false;
             var U = false;
@@ -274,7 +319,7 @@ namespace PacMan
             }
             var wayFound = false;
             var count = 0;
-            while (!wayFound && count < 3)
+            while (!wayFound && count < 100)
             {
                 var X = m_zufall.Next(1, 5);
                 switch (X)
@@ -284,7 +329,7 @@ namespace PacMan
                         if (O)
                         {
                             var NP = new Point(target.Location.X, target.Location.Y - 30);
-                            if (NP != player.Location && checkWalls(NP) && NP != player2.Location)
+                            if (NP != player.Location && checkWalls(ref NP, target.Location) && NP != player2.Location)
                             {
                                 target.Location = NP;
                                 wayFound = true;
@@ -296,21 +341,20 @@ namespace PacMan
                         if (R)
                         {
                             var NP = new Point(target.Location.X + 30, target.Location.Y);
-                            if (NP != player.Location && checkWalls(NP) && NP != player2.Location)
+                            if (NP != player.Location && checkWalls(ref NP, target.Location) && NP != player2.Location)
                             {
 
                                 target.Location = NP;
                                 wayFound = true;
                             }
                         }
-
                         break;
                     case 3:
                         count++;
                         if (U)
                         {
                             var NP = new Point(target.Location.X, target.Location.Y + 30);
-                            if (NP != player.Location && checkWalls(NP) && NP != player2.Location)
+                            if (NP != player.Location && checkWalls(ref NP, target.Location) && NP != player2.Location)
                             {
 
                                 target.Location = NP;
@@ -323,7 +367,7 @@ namespace PacMan
                         if (L)
                         {
                             var NP = new Point(target.Location.X - 30, target.Location.Y);
-                            if (NP != player.Location && checkWalls(NP) && NP != player2.Location)
+                            if (NP != player.Location && checkWalls(ref NP, target.Location) && NP != player2.Location)
                             {
 
                                 target.Location = NP;
@@ -365,7 +409,6 @@ namespace PacMan
             {
                 rechtsbtn_Click(sender, new EventArgs());
             }
-
             if (e.KeyCode == Keys.A )
             {
                 linksbtn_Click(sender, new EventArgs());
@@ -388,10 +431,10 @@ namespace PacMan
                 linksbtn2_Click(sender, new EventArgs());
             }
         }
-
+        //all diese EventArgs müssen bereinigt werden.
         private void target_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -408,7 +451,6 @@ namespace PacMan
         {
 
         }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -429,7 +471,7 @@ namespace PacMan
             if (NP.Y >= 0 && NP != player.Location)
 
             {
-                if (checkWalls(NP))
+                if (checkWalls(ref NP, player2.Location))
                 {
                     player2.Location = NP;
                     targetRefresh();
@@ -444,14 +486,12 @@ namespace PacMan
             if (NP.X <= 270 && NP != player.Location)
 
             {
-                if (checkWalls(NP))
+                if (checkWalls(ref NP, player2.Location))
                 {
                     player2.Location = NP;
                     targetRefresh();
                 }
             }
- 
-
         }
 
         private void runterbtn2_Click(object sender, EventArgs e)
@@ -459,7 +499,7 @@ namespace PacMan
             var NP = new Point(player2.Location.X, player2.Location.Y + 30);
             if (NP.Y <= 270 && NP != player.Location)
             {
-                if (checkWalls(NP))
+                if (checkWalls(ref NP, player2.Location))
                 {
                     player2.Location = NP;
                     targetRefresh();
@@ -473,13 +513,12 @@ namespace PacMan
             if (NP.X >= 0 && NP != player.Location)
 
             {
-                if (checkWalls(NP))
+                if (checkWalls(ref NP, player2.Location))
                 {
                     player2.Location = NP;
                     targetRefresh();
-                }
+                }            
             }
-            
         }
         private void Form2_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -505,6 +544,7 @@ namespace PacMan
                 linksbtn2_Click(sender, new EventArgs());
             }
         }
+
         private void targetRefresh2()
         {
             if (player2.Location == target.Location)
@@ -517,11 +557,12 @@ namespace PacMan
 
         private void teleportation(object sender, EventArgs e)
         {
-            var NP = new Point(player2.Location.X + 90, player2.Location.Y - 60);
-            if (NP.X == 210 && NP.Y == 120 && NP != player.Location)
+            var NP = new Point(player2.Location.X + 150, player2.Location.Y - 60);
+            if (NP.X == 210 && NP.Y == 150 && NP != player.Location)
             {
                     player2.Location = NP;
                     targetRefresh();
+                    
             }
         }
 
@@ -547,6 +588,10 @@ namespace PacMan
         {
 
         }
+
+        private void panel17_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
-    
 }

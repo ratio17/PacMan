@@ -89,8 +89,12 @@
     <Content Include="pacmanR.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\pipe9 rund mit sonne oben links remastered - Kopie.png" />
-    <Content Include="Resources\pipe9 rund mit sonne unten - remastered.png" />
+    <None Include="Resources\pipe1 - Kopie.png" />
+    <None Include="Resources\pipe9 rund mit sonne oben links remastered.png" />
+    <None Include="Resources\pipe9 rund mit sonne unten - remastered - Kopie.png" />
+    <None Include="Resources\pipe9 rund mit sonne unten - remastered - Kopie %282%29.png" />
+    <Content Include="Resources\pipe9.png" />
+    <Content Include="Resources\pipe10.png" />
     <None Include="Resources\pipe6.png" />
     <None Include="Resources\pipe5.png" />
     <None Include="Resources\pipe4.png" />

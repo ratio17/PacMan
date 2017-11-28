@@ -103,9 +103,59 @@ namespace PacMan.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap pipeHori_SunBot {
+            get {
+                object obj = ResourceManager.GetObject("pipeHori_SunBot", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap pipeHori_SunTop {
             get {
                 object obj = ResourceManager.GetObject("pipeHori_SunTop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap pipeRund_SonneObenLinks {
+            get {
+                object obj = ResourceManager.GetObject("pipeRund_SonneObenLinks", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap pipeRund_SonneObenRechts {
+            get {
+                object obj = ResourceManager.GetObject("pipeRund_SonneObenRechts", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap pipeRund_SonneUntenLinks {
+            get {
+                object obj = ResourceManager.GetObject("pipeRund_SonneUntenLinks", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap pipeRund_SonneUntenObenLinks {
+            get {
+                object obj = ResourceManager.GetObject("pipeRund_SonneUntenObenLinks", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
