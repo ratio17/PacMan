@@ -41,14 +41,13 @@
             this.runterbtn2 = new System.Windows.Forms.Button();
             this.linksbtn2 = new System.Windows.Forms.Button();
             this.rechtsbtn2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.playGround.SuspendLayout();
             this.SuspendLayout();
             // 
             // hochbtn
             // 
             this.hochbtn.BackColor = System.Drawing.Color.Yellow;
-            this.hochbtn.Location = new System.Drawing.Point(75, 340);
+            this.hochbtn.Location = new System.Drawing.Point(80, 397);
             this.hochbtn.Name = "hochbtn";
             this.hochbtn.Size = new System.Drawing.Size(75, 23);
             this.hochbtn.TabIndex = 0;
@@ -60,7 +59,7 @@
             // runterbtn
             // 
             this.runterbtn.BackColor = System.Drawing.Color.Yellow;
-            this.runterbtn.Location = new System.Drawing.Point(75, 398);
+            this.runterbtn.Location = new System.Drawing.Point(80, 455);
             this.runterbtn.Name = "runterbtn";
             this.runterbtn.Size = new System.Drawing.Size(75, 23);
             this.runterbtn.TabIndex = 1;
@@ -72,7 +71,7 @@
             // linksbtn
             // 
             this.linksbtn.BackColor = System.Drawing.Color.Yellow;
-            this.linksbtn.Location = new System.Drawing.Point(0, 369);
+            this.linksbtn.Location = new System.Drawing.Point(5, 426);
             this.linksbtn.Name = "linksbtn";
             this.linksbtn.Size = new System.Drawing.Size(75, 23);
             this.linksbtn.TabIndex = 2;
@@ -84,7 +83,7 @@
             // rechtsbtn
             // 
             this.rechtsbtn.BackColor = System.Drawing.Color.Yellow;
-            this.rechtsbtn.Location = new System.Drawing.Point(150, 369);
+            this.rechtsbtn.Location = new System.Drawing.Point(155, 426);
             this.rechtsbtn.Name = "rechtsbtn";
             this.rechtsbtn.Size = new System.Drawing.Size(75, 23);
             this.rechtsbtn.TabIndex = 3;
@@ -110,7 +109,7 @@
             this.playGround.Controls.Add(this.player2);
             this.playGround.Controls.Add(this.target);
             this.playGround.Controls.Add(this.player);
-            this.playGround.Location = new System.Drawing.Point(150, 12);
+            this.playGround.Location = new System.Drawing.Point(202, 120);
             this.playGround.Name = "playGround";
             this.playGround.Size = new System.Drawing.Size(300, 300);
             this.playGround.TabIndex = 4;
@@ -141,7 +140,7 @@
             // hochbtn2
             // 
             this.hochbtn2.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.hochbtn2.Location = new System.Drawing.Point(448, 340);
+            this.hochbtn2.Location = new System.Drawing.Point(534, 397);
             this.hochbtn2.Name = "hochbtn2";
             this.hochbtn2.Size = new System.Drawing.Size(75, 23);
             this.hochbtn2.TabIndex = 5;
@@ -153,7 +152,7 @@
             // runterbtn2
             // 
             this.runterbtn2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.runterbtn2.Location = new System.Drawing.Point(448, 398);
+            this.runterbtn2.Location = new System.Drawing.Point(534, 455);
             this.runterbtn2.Name = "runterbtn2";
             this.runterbtn2.Size = new System.Drawing.Size(75, 23);
             this.runterbtn2.TabIndex = 6;
@@ -165,7 +164,7 @@
             // linksbtn2
             // 
             this.linksbtn2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.linksbtn2.Location = new System.Drawing.Point(375, 369);
+            this.linksbtn2.Location = new System.Drawing.Point(461, 426);
             this.linksbtn2.Name = "linksbtn2";
             this.linksbtn2.Size = new System.Drawing.Size(75, 23);
             this.linksbtn2.TabIndex = 7;
@@ -177,7 +176,7 @@
             // rechtsbtn2
             // 
             this.rechtsbtn2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.rechtsbtn2.Location = new System.Drawing.Point(521, 369);
+            this.rechtsbtn2.Location = new System.Drawing.Point(607, 426);
             this.rechtsbtn2.Name = "rechtsbtn2";
             this.rechtsbtn2.Size = new System.Drawing.Size(75, 23);
             this.rechtsbtn2.TabIndex = 8;
@@ -186,23 +185,12 @@
             this.rechtsbtn2.UseVisualStyleBackColor = false;
             this.rechtsbtn2.Click += new System.EventHandler(this.rechtsbtn2_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.Red;
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(231, 372);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 20);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.Text = "    <-Player1   |   Player2->";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(596, 432);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(684, 523);
             this.Controls.Add(this.rechtsbtn2);
             this.Controls.Add(this.linksbtn2);
             this.Controls.Add(this.runterbtn2);
@@ -221,7 +209,6 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.playGround.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -237,7 +224,6 @@
         private System.Windows.Forms.Button runterbtn2;
         private System.Windows.Forms.Button linksbtn2;
         private System.Windows.Forms.Button rechtsbtn2;
-        protected System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel player2;
     }
 }

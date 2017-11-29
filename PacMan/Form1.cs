@@ -290,6 +290,7 @@ namespace PacMan
                 var message = "Treffer! Eine Tür hat sich geöffnet! Du kannst sie benutzen um ins nächste Level zu springen! Du musst sie nur suchen";
                 MessageBox.Show(message);
                 playGround.BackgroundImage = new Bitmap(@"C:\Users\FinkA\source\repos\PacMan\PacMan\Resources\Backcolor2.png");
+                //this.BackgroundImage = new Bitmap(@"C:\Users\FinkA\Pictures\Saved Pictures\retro-fernseher.jpg");
 
                 //Hier muss hinzugefügt werden, dass sich eine "Tür" öffnet, sobald der Geist in LVL 1 geschnappt wurde (PortalWall öffnet sich)
             }
@@ -297,8 +298,8 @@ namespace PacMan
             {
                 var message = "Treffer! Eine Tür hat sich geöffnet! Du kannst sie benutzen um ins nächste Level zu springen! Du musst sie nur suchen";
                 MessageBox.Show(message);
-                playGround.BackgroundImage = new Bitmap(@"C:\Users\FinkA\source\repos\PacMan\PacMan\Resources\Backcolor2.png");
-
+                playGround.BackgroundImage = new Bitmap(@"C:\Users\FinkA\Pictures\Saved Pictures\bf.jpg");
+                
             }
             ///Target St
             var O = false;
