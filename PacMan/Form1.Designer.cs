@@ -35,13 +35,13 @@
             this.rechtsbtn = new System.Windows.Forms.Button();
             this.player = new System.Windows.Forms.Panel();
             this.playGround = new System.Windows.Forms.Panel();
+            this.player2 = new System.Windows.Forms.Panel();
             this.target = new System.Windows.Forms.Panel();
             this.hochbtn2 = new System.Windows.Forms.Button();
             this.runterbtn2 = new System.Windows.Forms.Button();
             this.linksbtn2 = new System.Windows.Forms.Button();
             this.rechtsbtn2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.player2 = new System.Windows.Forms.Panel();
             this.playGround.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,11 +110,22 @@
             this.playGround.Controls.Add(this.player2);
             this.playGround.Controls.Add(this.target);
             this.playGround.Controls.Add(this.player);
-            this.playGround.Location = new System.Drawing.Point(12, 12);
+            this.playGround.Location = new System.Drawing.Point(150, 12);
             this.playGround.Name = "playGround";
             this.playGround.Size = new System.Drawing.Size(300, 300);
             this.playGround.TabIndex = 4;
             this.playGround.Paint += new System.Windows.Forms.PaintEventHandler(this.playGround_Paint);
+            // 
+            // player2
+            // 
+            this.player2.AccessibleName = "Player2";
+            this.player2.BackColor = System.Drawing.Color.Transparent;
+            this.player2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("player2.BackgroundImage")));
+            this.player2.Location = new System.Drawing.Point(270, 0);
+            this.player2.Name = "player2";
+            this.player2.Size = new System.Drawing.Size(30, 30);
+            this.player2.TabIndex = 22;
+            this.player2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel21_Paint);
             // 
             // target
             // 
@@ -185,23 +196,12 @@
             this.textBox1.TabIndex = 9;
             this.textBox1.Text = "    <-Player1   |   Player2->";
             // 
-            // player2
-            // 
-            this.player2.AccessibleName = "Player2";
-            this.player2.BackColor = System.Drawing.Color.Transparent;
-            this.player2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("player2.BackgroundImage")));
-            this.player2.Location = new System.Drawing.Point(270, 0);
-            this.player2.Name = "player2";
-            this.player2.Size = new System.Drawing.Size(30, 30);
-            this.player2.TabIndex = 22;
-            this.player2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel21_Paint);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(734, 461);
+            this.ClientSize = new System.Drawing.Size(596, 432);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.rechtsbtn2);
             this.Controls.Add(this.linksbtn2);

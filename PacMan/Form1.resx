@@ -1548,20 +1548,6 @@
         YQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="target.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAAd0SU1FB+EIEAkoGDBFc6oAAAELSURBVEhL7ZFBrsIwEEN7EJacnKv0MmzYcIGQ
-        iXA6dT1V0kJRJb70PhnP2EZiSCn9BCkegRSPQIpHIMWI/Gf/VmFPhBQVCH5criE95VJkWkpBa7kUmdZS
-        sLvYAoAqiPA+zgRadEYf5sMj2AMWHQshS+M4puF2r9jMoQrslZ/L66MKWfImwOGM15W/v9hmF9oCPJwz
-        6/FDEYTBUAUR8HDOrGc2vAui37iVyO/LZfG3OE+x6b1EObULjzKsGZ4TmPnT78Ocf3EZ1gwUzPA+zOkp
-        NjiY8XvlN8rdnuIte2NT8Sc4R/Hal+ndmVa78CgDHeOQ9a076GWHRxncoT/6xq4elCGPwOtg727ap+EF
-        d49JFmgNFVYAAAAASUVORK5CYII=
-</value>
-  </data>
-  <metadata name="textBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="player2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -1578,4 +1564,18 @@
         JV2GypMjg/NQghx1j6a1f8bDd2BAV1dYAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="target.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAAd0SU1FB+EIEAkoGDBFc6oAAAELSURBVEhL7ZFBrsIwEEN7EJacnKv0MmzYcIGQ
+        iXA6dT1V0kJRJb70PhnP2EZiSCn9BCkegRSPQIpHIMWI/Gf/VmFPhBQVCH5criE95VJkWkpBa7kUmdZS
+        sLvYAoAqiPA+zgRadEYf5sMj2AMWHQshS+M4puF2r9jMoQrslZ/L66MKWfImwOGM15W/v9hmF9oCPJwz
+        6/FDEYTBUAUR8HDOrGc2vAui37iVyO/LZfG3OE+x6b1EObULjzKsGZ4TmPnT78Ocf3EZ1gwUzPA+zOkp
+        NjiY8XvlN8rdnuIte2NT8Sc4R/Hal+ndmVa78CgDHeOQ9a076GWHRxncoT/6xq4elCGPwOtg727ap+EF
+        d49JFmgNFVYAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="textBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

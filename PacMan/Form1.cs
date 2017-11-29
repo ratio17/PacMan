@@ -4,7 +4,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,10 +38,10 @@ namespace PacMan
             {
                 Position = new Point (30, 210),
                 Bild = Resources.pipeEnd_Up,
-                isOpen = false,
+                isOpen = true,
                 ÖffnungsRichtung = Richtung.oben,
                 Id = 4,
-                IdOfTargetPortal = 1
+                IdOfTargetPortal = 2
             },
             new BasicWall()
             {
@@ -127,10 +130,10 @@ namespace PacMan
             {
                 Position = new Point (120, 180),
                 Bild = Resources.pipeEnd_Up,
-                isOpen = false,
+                isOpen = true,
                 ÖffnungsRichtung = Richtung.oben,
                 Id = 2,
-                IdOfTargetPortal = 1
+                IdOfTargetPortal = 4
 
             },
             new PortalWall()
@@ -221,8 +224,7 @@ namespace PacMan
                         return true;
                     }
                 }
-
-                
+               
                 return false;
             }
             return true;
@@ -287,13 +289,16 @@ namespace PacMan
             {
                 var message = "Treffer! Eine Tür hat sich geöffnet! Du kannst sie benutzen um ins nächste Level zu springen! Du musst sie nur suchen";
                 MessageBox.Show(message);
-               
+                playGround.BackgroundImage = new Bitmap(@"C:\Users\FinkA\source\repos\PacMan\PacMan\Resources\Backcolor2.png");
+
                 //Hier muss hinzugefügt werden, dass sich eine "Tür" öffnet, sobald der Geist in LVL 1 geschnappt wurde (PortalWall öffnet sich)
             }
             else if (player2.Location == target.Location )
             {
                 var message = "Treffer! Eine Tür hat sich geöffnet! Du kannst sie benutzen um ins nächste Level zu springen! Du musst sie nur suchen";
                 MessageBox.Show(message);
+                playGround.BackgroundImage = new Bitmap(@"C:\Users\FinkA\source\repos\PacMan\PacMan\Resources\Backcolor2.png");
+
             }
             ///Target St
             var O = false;
@@ -551,21 +556,9 @@ namespace PacMan
             {
                 var message = "Treffer! Eine Tür hat sich geöffnet! Du kannst sie benutzen um ins nächste Level zu springen! Du musst sie nur suchen";
                 MessageBox.Show(message);
-
             }
         }
-
-        private void teleportation(object sender, EventArgs e)
-        {
-            var NP = new Point(player2.Location.X + 150, player2.Location.Y - 60);
-            if (NP.X == 210 && NP.Y == 150 && NP != player.Location)
-            {
-                    player2.Location = NP;
-                    targetRefresh();
-                    
-            }
-        }
-
+        
         private void target2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -578,9 +571,10 @@ namespace PacMan
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
-        private void newEntry() {
+        private void newEntry()
+        {
 
         }
 
